@@ -1,0 +1,421 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: auto;
+
+}
+.overlay{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.imageContaienr{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.imageContaienr button{
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(230, 77, 77, 0.577);;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0px 0px 10px black;
+    cursor: pointer;
+    transition: .2s ease;
+}
+.imageContaienr button svg{
+    scale: 1.2;
+}
+.imageContaienr button:hover{
+    box-shadow:  0px 0px 10px rgb(248, 5, 46);
+
+}
+.imageContaienr button:active{
+    background-color: red;
+    color: white;
+}
+.off{
+   position: absolute;
+   background-color: rgba(249, 53, 53, 0.642);
+   border-radius: 5px;
+   font-weight: bold;
+   padding: 10px;
+   left: 0px;
+}
+.imageContaienr img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+}
+
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.lineThrough{
+    text-decoration: line-through;
+    color: red;
+}
+.discount{
+    color: rgb(53, 101, 4);
+    font-weight: bold;
+    text-shadow: 0px 0px 5px chartreuse;
+}
+
+
+.subcontainer h2{
+    margin: 50px 0px;
+    color: rgb(17, 11, 1);
+    background-color: rgba(255, 166, 0, 0.378);
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.subcontainer li {
+    text-align: justify;
+    font-weight: 500;
+    font-size: large;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.subcontainer .key p{
+    font-weight: bold;
+    margin-right: 5px;
+    color: darkred;
+}
+
+.subcontainer li::before{
+    content: "•";
+    color: darkred;
+    margin-right: 20px;
+    scale: 1.5;
+}
+.intro{
+    margin-top: 20px;
+    text-align: justify;
+    font-size: large;
+}
+
+.topDetails li:nth-child(2) span {
+  margin-left: 10px;
+}
+.details h2 { 
+    margin: 50px 0px;
+    color: rgb(17, 11, 1);
+    background-color: rgba(255, 166, 0, 0.378);
+    padding: 2px;
+    border-radius: 5px;
+}
+
+
+
+.details li:before{
+    content: "•";
+    color: darkred;
+    scale: 1.5;
+    margin-right: 20px;
+}
+
+.details li{
+    text-align: justify;
+    font-weight: 500;
+    font-size: large;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+
+
+
+.recipe h2 {
+      margin: 50px 0px;
+    color: rgb(17, 11, 1);
+    background-color: rgba(255, 166, 0, 0.378);
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.oddback{
+    background-color: rgba(244, 204, 130, 0.378);
+    padding: 10px;
+
+}
+
+
+.evenback{
+    background-color: rgba(245, 161, 161, 0.349);
+    padding: 10px;
+
+}
+
+.recipe {
+    text-align: justify;
+    font-weight: 800;
+    font-size: large;
+    margin-bottom: 100px;
+}
+
+.recipe span {
+    font-size: larger;
+    padding: 20px;
+    height: 100%;
+}
+.recipe div{
+    display: flex;
+    align-items: center;
+}
+
+.popUp{
+    position: absolute;
+    background-color: rgb(249, 221, 226);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    z-index: 2;
+    animation: popUp .3s linear ; 
+
+}
+
+
+.preventOrder{
+    background-color: rgba(255, 166, 0, 0.378);
+    border-radius: 10px;
+    text-align: center;
+    color: rgb(4, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-weight: bold;
+}
+
+
+.sign2see{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: lightcoral;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+}
+
+.sign2see svg{
+    color: darkred;
+}
+
+
+
+
+@keyframes popUp {
+    from{
+        opacity: 0;
+        height: 0px;
+        
+    }
+    to{
+        opacity: 1;
+        height: 500px;
+    }
+}
+
+.popUp h1{
+    background-color: rgba(255, 166, 0, 0.378);
+    padding: 5px;
+    width: 98%;
+    text-align: center;
+}
+
+.popUp  span{
+    color: darkred;
+}
+
+.countContainer {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.countContainer button:active{
+    scale: 1.1;
+    background-color: orange;
+    transition: .2s ease;
+}
+.confirmContainer span{
+    font-weight: bold;
+}
+.popUp h4{
+    font-size: 20px;
+}
+
+.pricePop{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.popUp button{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 5px black;
+    cursor: pointer;
+}
+
+.confirmContainer button:first-child{
+    background-color: chartreuse;
+    font-weight: bold;
+}
+
+.confirmContainer button:nth-child(2){
+    background-color: rgb(245, 98, 98);
+    font-weight: bold;
+}
+
+@media screen and (max-width:800px) {
+    .top{
+       width: fit-content;
+       margin: auto;
+    }
+    .top img{
+        width: 458px;
+    }
+
+    .subtop h1{
+        font-size: 20px;
+        margin-left: 0px;
+        gap: 0px;
+    }
+
+    .subtop h4{
+        font-size: 15px;
+        margin-left: 0px;
+        gap: 0px;
+
+    }
+    .lineThrough{
+     margin-left: 10px;
+    }
+
+}
+
+
+@media screen and (max-width:500px) {
+    .top img{
+        width: 100%;
+    }
+    .top{
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+    .intro{
+        font-size: 15px;
+    }
+    .preventOrder{
+        font-size: 12px;
+    }
+
+
+
+    .recipe{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .imageContaienr img{
+        width: 100%;
+    }
+    .key p{
+        font-size: 15px;
+    }
+    .key span{
+        font-size: 15px;
+
+    }
+
+    .details p{
+        font-size: 12px;
+    }
+}
+
+
+
+@media screen and (max-width:500px) {
+    .popUp {
+        width: 300px;
+        font-size: 10px;
+    }
+
+    .popUp h4{
+        font-size: 15px;
+    }
+    .countContainer {
+        font-weight: bold;
+
+    }
+    .countContainer button{
+        padding: 5px;
+        width: 20px;
+        font-weight: bold;
+    }
+}
+
+@media  screen and (max-width:300px) {
+    .popUp {
+        width: 250px;
+        font-size: 10px;
+        overflow-x: hidden;
+    }
+
+    .popUp h4{
+        font-size: 15px;
+    }
+    .countContainer {
+        font-weight: bold;
+
+    }
+    .countContainer button{
+        padding: 5px;
+        width: 20px;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,258 @@
+.cardContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+   box-shadow:  0px 0px 30px black;
+   border-radius: 10px;
+   transition: .2s ease;
+    
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+}
+
+.left div{
+    width: 100%;
+}
+
+
+.imageLink img{
+      width: 200px;
+    border-radius: 10px;
+    transition: .2s ease;
+}
+
+.imageLink img:hover{
+    box-shadow: 0px 10px 10px black;
+ 
+}
+
+
+.food{
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+.money{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 15px;
+    align-items: center;
+}
+
+.money h4{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.money div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.priceContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.discountPrice{
+    color: rgb(72, 139, 5);
+}
+
+.disline{
+     display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.disline {
+    text-decoration: line-through;
+    color: rgb(184, 1, 1);
+}
+
+.normalPrice{
+    display: flex;
+    align-content: center;
+    gap: 5px;
+}
+
+.tag{
+    position: absolute;
+    background-color: rgba(249, 53, 53, 0.642);
+    padding: 5px;
+    border-radius: 5px;
+    top: 0px;
+    left: 0px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.cancel {
+    background:transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: .2s ease;
+
+}
+.disabled{
+    background:transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: .2s ease;
+    cursor: none;
+}
+
+.cancel p{
+  font-weight: bold;
+  color: darkred;
+  transition: .2s ease;
+}
+.cancel svg{
+    transition: .2s ease;
+}
+
+.cancel:hover svg{
+    color: red;
+}
+
+.cancel:hover p{
+    transform: translateX(5px);
+    color: red;
+}
+.amount{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.transfer{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    opacity: .5;
+}
+
+.ordertime{
+    display: flex;
+    flex-direction: column;
+    gap: 10px !important;
+    margin-right: 10px;
+}
+.ordertime p {
+    box-shadow: 0px 0px 5px black;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    width: 150px;
+}
+
+.ordertime h3{
+    display: flex;
+    align-items: center;
+    color: rgb(70, 51, 4);
+    gap: 5px;
+}
+
+@media screen and (max-width:730px) {
+    .cardContainer{
+        width: 80%;
+        flex-direction: column;
+        margin-bottom: 50px;
+        
+    }
+    .food{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+    }
+    .food img{
+        width: 100%;
+    }
+
+    .food{
+        font-size: 12px;
+    }
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .left div{
+        width: 100%;
+    }
+    .money{
+        margin-left: 5px;
+        margin-top: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .ordertime {
+        display: flex;
+             
+    }
+
+    .ordertime p{
+        font-size: 10px;
+        padding: 3px;
+    }
+    .ordertime h4{
+        font-size: 10px;
+    }
+
+
+
+}
+
+
+@media screen and (max-width:500px) {
+    .money{
+        font-weight: bold;
+        margin-bottom: 10px;
+        gap: 20px;
+        white-space:nowrap;
+        padding: 5px;
+    }
+
+    .priceContainer P:last-child{
+        white-space:nowrap;
+    }
+
+    .ordertime p{
+        width: 100px;
+    }
+
+   
+}
+
+
+@media screen and (max-width:300px) {
+    .money p{
+        font-size: 9px;
+    }
+
+    .priceContainer p:last-child{
+        font-size: 10px;
+    }
+    .priceContainer {
+        white-space:nowrap;
+    }
+
+    .ordertime p{
+        width: 90px;
+    }
+ 
+}

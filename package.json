@@ -1,0 +1,34 @@
+{
+  "name": "my-food-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "serve-json": "json-server --watch db.json --port 4000"
+  },
+  "dependencies": {
+    "@next/font": "13.4.12",
+    "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^1.6.0",
+    "bcrypt": "^5.1.0",
+    "cookie": "^0.5.0",
+    "dotenv": "^16.3.1",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.12",
+    "json-web-token": "^3.2.0",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.2",
+    "next": "^13.4.6",
+    "next-auth": "^4.19.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.10.1",
+    "react-loader-spinner": "^5.4.5",
+    "react-redux": "^8.1.2",
+    "react-toastify": "^9.1.3"
+  }
+}

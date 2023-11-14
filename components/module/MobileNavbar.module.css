@@ -1,0 +1,120 @@
+@media  screen and (max-width: 500px) {
+
+    .hide{
+        position: absolute;
+        background-color: pink;
+        height: 100vh;
+        z-index: 1;
+        top: 0px;
+        right: 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        width: 50%;
+        transform: translateX(100%);
+        transition: .2s ease;
+    }
+    .hide a {
+        color: black;
+        font-weight: bold;
+    }
+
+    .hamMenu{
+        position: relative;
+        display: block;
+        margin-right: 20px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 3;
+        background-color: transparent;
+        border: none;
+        transition: .2s ease;
+        
+    }
+    .hamMenu:active{
+       color: red;
+       scale: 1.1;
+    }
+    
+
+
+    .hamMenu svg{
+        scale: 1.5;
+    }
+    
+    .hamMenu span{
+        font-size: 15px;
+        font-weight: bold;
+    }
+    
+    
+    .show{
+        position: absolute;
+        right: 0px;
+        height: 100vh;
+        background-color: pink;
+        z-index: 2;
+        top: 0px;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        transition: ease .2s ;
+        transform: translateX(0%);
+    }
+    
+    
+    .show a{
+        color: black;
+        font-weight: bold;
+    }
+    .quantity{
+        position: absolute;
+        background-color: pink;
+        width: 10px;
+        text-align: center;
+        font-size: 10px;
+        border-radius: 50%;
+        padding: 5px;
+        right: 30px;
+        bottom: 15px;
+        z-index: 10;
+        animation : alert 1s linear forwards
+
+    }
+    .hamQuantity{
+        position: absolute;
+        background-color: rgb(248, 104, 128);
+        width: 10px;
+        text-align: center;
+        font-size: 10px;
+        border-radius: 50%;
+        padding: 5px;
+        z-index: 10;
+        transform: translateY(10px);
+        top: 53%;
+        right: 30%;
+        animation : alert 1s linear forwards
+    }
+    @keyframes alert {
+        0%{
+         scale: .2;
+        }
+        25%{
+         scale: 1;
+        }
+        50%{
+         scale: .2;
+        }
+        100%{
+         scale: 1;
+        }
+     }
+}

@@ -1,0 +1,17 @@
+*{
+  padding: 0px;
+  margin: 0px;
+
+}
+
+body{
+  background-color:#f4e0e0;
+  overflow-x: hidden;
+
+}
+
+
+a{
+  text-decoration: none;
+  color: white;
+}

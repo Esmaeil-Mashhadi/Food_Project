@@ -1,0 +1,23 @@
+.container{
+    margin: 20px;
+    margin: auto;
+
+}
+.container h3{
+    color: rgb(17, 11, 1);
+    background-color: rgba(255, 166, 0, 0.378);
+    padding: 2px;
+    border-radius: 5px;
+}
+.container p{
+    margin-top: 20px;
+    font-size: 19px;
+    text-align: justify;;
+    padding: 0px 20px;
+}
+
+@media screen and (max-width:768px) {
+    .container p{
+        font-size: 15px;
+    }
+}

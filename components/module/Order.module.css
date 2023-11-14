@@ -1,0 +1,158 @@
+.circleContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: .2s ease;
+}
+
+
+.orderContainer {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    transition: .2s ease;
+    color: black;
+    position: relative;
+}
+
+
+.orderContainer h3{
+display: flex;
+align-content: center;
+justify-content: center;
+gap: 10px;
+margin: 10px;
+
+
+}
+
+.orderContainer h3 svg{
+    scale: 1.5;
+}
+
+.orderSubContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    box-shadow:  0px 0px 30px black;
+    border-radius: 10px;
+    transition: .2s ease;
+    margin-bottom: 20px;
+    
+}
+
+.transfer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+   box-shadow: 0px 0px 5px black;
+   border-radius: 10px;
+   transition: .2s ease;
+   opacity: 0;
+}
+
+
+.circle{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle div{
+position: relative;
+z-index: 1;
+}
+
+.circle::after{
+    content: "";
+    position: absolute;
+    background-color: orange ;
+    inset: 10px;
+    border-radius: 50%;
+}
+.cancel{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    bottom: 5%;
+}
+
+.cancel:hover{
+    scale: 1.1;
+}
+
+
+@media screen and (max-width:730px) {
+    .orderSubContainer{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+   .circle{
+    width: 80px;
+    height: 80px;
+    font-size: 12px;
+    font-weight: bold;
+   }
+
+   .circleContainer{
+    position: absolute;
+    right: 30px;
+    bottom: 15px;
+    flex-direction: row;
+   }
+
+   .circleContainer h4{
+    font-size: 12px;
+   }
+
+   .transfer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+   }
+}
+
+@media screen and (max-width:500px) {
+    .orderSubContainer{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+   .circle{
+    width: 80px;
+    height: 80px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 5px;
+   }
+
+   .circleContainer{
+    position: static;
+    width: 100%;
+    justify-content: space-between;
+}
+
+   .circleContainer h4{
+    font-size: 12px;
+    margin-left: 5px;
+   }
+
+   .transfer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+   }
+}

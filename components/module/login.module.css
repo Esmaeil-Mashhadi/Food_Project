@@ -1,0 +1,276 @@
+
+
+.transformContainer{
+    position: absolute;
+    transform: translateY(-50%);
+    width: 320px;
+    right: 0px;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+    transition: .5s ease;
+    justify-content: center;
+    transform: translate(100% , -50%);
+}
+
+.errorSpan {
+    font-size: 12px;
+    position: absolute;
+    left: 10px;
+    bottom: -30px;  
+}
+
+.formField{
+    position: relative;
+}
+
+.formField input{
+    width: 200px;
+    padding: 10px;
+    padding-right: 30px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px black;
+    
+}
+
+.formField label{
+    position: absolute;
+    left: 10px;
+    top: 7px;
+    transition: .2s ease;
+}
+
+.formField input:valid + label{
+    transform:  translate(-5px , -30px);
+    transition: .2s ease;
+}
+
+.formField input:focus + label{
+    transform:  translate(-5px , -30px);
+    transition: .2s ease;
+}
+
+.errorSpan{
+    color: red;
+}
+
+
+.checkSvg{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+   
+    color: darkgreen;
+   
+}
+
+.touched {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: rgb(191, 21, 6);
+}
+
+.exSvg{
+    display: none;
+}
+.eye{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.defaultEye{
+    width: fit-content;
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+
+.submition {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+
+.accepted{
+    color: darkgreen;
+    display: flex;
+    align-items: center;
+    transition: .2s ease;
+    text-shadow: 0px 0px 1px chartreuse;
+}
+
+.submition input{
+  cursor: pointer;
+  transform: translateY(2px);
+  scale: 1.3;
+  transition: .2s ease;
+}
+
+.submition input:active {
+    scale: 2;
+}
+
+.signUp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.signUp a {
+    color: rgb(217, 87, 6);
+    transition: .2s ease;
+}
+.signUp a:hover{
+    scale: 1.05;
+    text-shadow: 0px 0px 1px yellow;
+}
+
+.signUp button {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background:linear-gradient(45deg , rgb(207, 37, 65) , rgb(212, 153, 153) , yellow);
+    font-weight: bold;
+    box-shadow: 0px 0px 5px black;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+
+.fadeButton{
+    cursor: none !important;
+     pointer-events: none;
+}
+
+.signUp button:active{
+    background:linear-gradient(-45deg , rgb(207, 37, 65) , rgb(212, 153, 153) , yellow);
+    scale: 1.1;
+}
+
+
+.formLogContainer{
+    position: absolute;
+    width: 320px;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+    transition: .5s ease;
+    transition-delay: .3s;
+    justify-content: center;
+
+}
+
+
+.login{
+    display: flex;
+    gap: 7px;
+    align-items: center;
+}
+
+.login a{
+    color: rgb(217, 87, 6);
+    transition: .2s ease;
+}
+
+.login a:hover{
+    text-shadow: 0px 0px 2px yellow;
+    scale: 1.05;
+}
+
+.login button{
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background:linear-gradient(45deg , rgb(207, 37, 65) , rgb(212, 153, 153) , yellow);
+    font-weight: bold;
+    box-shadow: 0px 0px 5px black;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.login button:active{
+    background:linear-gradient(-45deg , rgb(207, 37, 65) , rgb(212, 153, 153) , yellow);
+    scale: 1.1;
+
+}
+ 
+
+
+@media screen and (max-width:992px) {
+    .formLogContainer{
+        width: 50%;
+    }
+    
+      .formField input{
+        width: 150px;
+        font-size: 10px;
+      }
+
+ 
+    }
+    
+    
+    @media screen and (max-width:768px) {
+        .formLogContainer{
+            position: absolute;
+            width:100%;
+            height: 400px;
+            top: 60%;
+            gap:32px;
+           
+        }
+        .transformContainer{
+            position: absolute;
+            width:100%;
+            height: 400px;
+            top: 60%;
+            gap:32px;
+            transform: translate(100% , -50%);
+          }
+    
+        .formField{
+            margin-top: 20px;
+        }
+    
+        .errorSpan{
+            bottom: 0px;
+            top: 35px;
+        }
+    }
+    
+    @media screen and (max-width:576px) {
+        .formLogContainer{
+            top: 62%;
+            font-size: 12px;
+            gap: 30px;
+        }
+    
+    }
+    
+    
+    @media screen and (max-width:300px) {
+       .formLogContainer{
+        font-size: 10px;
+       }
+    
+       .submition{
+        font-size: 12px;
+       }
+    }
+
+

@@ -1,0 +1,116 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+   
+}
+
+.container h3{
+    color: rgb(17, 11, 1);
+    background-color: rgba(255, 166, 0, 0.378);
+    padding: 2px;
+    border-radius: 5px;
+
+}
+
+.subContainer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+   
+}
+
+.subContainer div{
+    border-radius: 20px;
+    padding: 10px;
+    min-width: 150px;
+    background-color: rgba(230, 77, 77, 0.577);
+    color:black;
+    font-weight: bold;
+    margin: 0px 2px;
+   
+}
+
+.subContainer svg{
+    color:black;
+    margin-top: 15px;
+    transform:scale(2);
+    padding: 10px;
+    
+}
+
+.fast {
+    animation: fastpop 1s;  
+    
+}
+
+@keyframes fastpop {
+    from{
+        transform: translateX(-100%);    
+
+    }
+
+    to{
+        transform: translateX(0%);
+    }
+}
+
+.clock{
+    animation: clockpop 1s ;
+    
+}
+
+@keyframes clockpop {
+    from{
+        transform: translateX(+100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+.restaurant{
+    animation: respop 1s ;
+}
+
+@keyframes respop {
+    from{
+        transform: translateY(100%);
+    }
+
+    to{
+        transform: translateY(0%);
+    }
+}
+
+.choice{
+    animation: choicepop 1s;
+}
+
+@keyframes choicepop {
+    from{
+        transform: translateY(-100%);
+    }
+
+    to{
+        transform: translateY(0%);
+    }
+}
+
+
+
+@media screen and (max-width:800px) {
+    .subContainer div {
+        margin: 10px 2px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .subContainer{
+        justify-content: center;
+    }
+}

@@ -1,0 +1,104 @@
+.container {
+    position: relative;
+    width: fit-content;
+}
+
+.container img { 
+    width: 380px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+}
+
+.tag{
+    position: absolute;
+    background-color: rgba(249, 53, 53, 0.642);
+    padding: 10px;
+    border-radius: 10px;
+    top: 10px;
+    left: 10px;
+    font-weight: bold;
+    
+}
+.name{
+    font-size: large;
+    font-weight: bold;
+    color: rgb(75, 5, 5);
+    
+}
+
+.details{
+    background-color: rgba(230, 77, 77, 0.577);
+     text-align: center;
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: .2s;
+    position: relative;
+}
+
+
+
+.details:hover{
+ box-shadow: inset 0px 0px 10px pink;
+ cursor: pointer;
+}
+
+.details:active{
+    background-color: red;
+}
+
+.money{
+    display: flex;
+    justify-content: space-between;
+        margin:10px 0px ;
+}
+
+.disline{
+    text-decoration: line-through;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.disline svg{
+    scale: 1.5;
+}
+
+.pirceContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.location svg{
+    scale: 1.5;
+}
+.location {
+    font-weight: bold;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.normalPrice{
+    font-weight: bold;
+}
+
+
+@media screen and (max-width:600px) {
+    .container img { 
+        width: 340px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px black;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .container img { 
+        width: 240px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px black;
+    }
+}

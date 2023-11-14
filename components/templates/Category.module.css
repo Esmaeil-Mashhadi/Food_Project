@@ -1,0 +1,276 @@
+.Container{
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ min-height: 890px;
+
+}
+
+.searchImage{
+    width: 400px;
+}
+
+
+.buttonContainer{
+    position: absolute;
+    display: flex;
+    top: 200px;
+    gap: 30px;
+    height: 150px;
+    padding: 10px;
+    width: fit-content;
+    margin: auto;
+}
+
+
+.selectContainer{
+ width: 120px;   
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.diff{
+      background-color: rgb(240, 187, 147);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px black;
+    width: 100%;
+    font-weight: bold;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+.diff:active svg{
+ scale: 1.2;
+}
+.diff:hover{
+    box-shadow: 0px 0px 10px black;
+}
+
+.diff:active{
+    box-shadow: 0px 0px 10px rgb(243, 216, 16);
+}
+.hidden{
+    opacity: 0;
+    width: 120px;
+    font-size: 10px;
+   
+}
+
+
+.move{
+    font-size: 10px;
+    width: 110px;
+    font-weight: bold;
+    margin: 7px auto;
+    border: none;
+    padding: 5px;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 5px;
+    transition: .2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.difOptions button:active{
+  box-shadow: 0px 0px 10px yellow;
+}
+
+.move svg{
+    scale: 1.5;
+}
+
+
+.difOptions button:first-child{
+    background-color: chartreuse;
+}
+
+.difOptions button:nth-child(2){
+    background-color: orange;
+}
+
+.difOptions button:last-child{
+    background-color: rgb(238, 81, 81);
+}
+
+
+.timeContainer{
+ height: 100%;
+}
+
+.timeOptoins{
+    display: flex;
+    flex-direction: column;
+}
+
+.time{
+    background-color: rgb(240, 187, 147);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px black;
+    width: 140px;
+    font-weight: bold;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.timeOptoins button:first-child{
+    background-color: rgb(241, 162, 17);
+
+}
+
+.timeOptoins button:last-child{
+    background-color: rgb(234, 220, 62);
+  
+
+}
+
+.timeMove{
+    font-size: 10px;
+    width: 130px;
+    font-weight: bold;
+    margin: 7px auto;
+    border: none;
+    padding: 5px;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 5px;
+    transition: .2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.timeMove svg{
+    scale: 1.5;
+}
+
+
+.hideTime{
+    opacity: 0;
+    width: 120px;
+    font-size: 10px;
+}
+
+
+
+.timeContainer button:active svg{
+ scale: 1.5;
+}
+.timeContainer button:active{
+    box-shadow: 0px 0px 10px yellow;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 5px black;
+    background-color: yellow;
+    font-weight: bold;
+    transition: .2s ease;
+    height: 30px;
+}
+.search:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px black;
+}
+
+.search:hover svg{
+    cursor: pointer;
+    scale: 1.5;
+}
+
+.search svg{
+    scale: 1.3;
+    transition: .2s ease;
+}
+.search:active{
+    background-color: black;
+    color: yellow;
+}
+
+.fade{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 5px black;
+    background-color: yellow;
+    font-weight: bold;
+    transition: .2s ease;
+    opacity: .5;
+    height: 30px;
+}
+.resultContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 300px;
+    margin-bottom: 80px;
+    gap: 25px;
+
+}
+  
+
+@media screen and (max-width :500px) {
+ .buttonContainer {
+    flex-direction: column;
+    gap: 10px;
+    height: fit-content;
+    width:fit-content;
+ }
+
+ .searchImage{
+    width: 200px;
+    margin-top: 200px;
+ }
+ 
+ .selectContainer{
+    width: 140px;
+ }
+
+ .search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: -1;
+   margin-bottom: 20px;
+ }
+
+ .fade{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: -1;
+   margin-bottom: 20px;
+
+ }
+
+
+
+
+ .resultContainer{
+    margin-top: 500px;
+ }
+  
+}
