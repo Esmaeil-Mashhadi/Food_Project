@@ -44,7 +44,6 @@ const ProfilePage = ({email}) => {
     totalPrice =    localTotal?.localTotalPrice || data.totalPrice
     ordered = dbOrdered
     
-
     const checkoutHandler = ()=>{ 
         localStorage.setItem('inProgress' , JSON.stringify({progress : true}))
         setCheckout(true)
@@ -72,6 +71,7 @@ const ProfilePage = ({email}) => {
             
             const {data : {products}} = await res?.json()
             const [finalData] = products
+           
             const {ordered , history} = finalData || {ordered : [] , history : []}  
 
             
@@ -92,7 +92,6 @@ const ProfilePage = ({email}) => {
         }
     },[refresh])  
 
-     
 
     useEffect(()=>{    
         try {

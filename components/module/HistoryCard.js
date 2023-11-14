@@ -12,7 +12,7 @@ const HistoryCard = ({product}) => {
     const {id , name , price , discount , details , quantity , orderDate } = product
     const finishedPrice = (price * (100-discount)/100)
 
-    console.log(discount);
+    
 
     const [date , time] = orderDate.split(',')
     

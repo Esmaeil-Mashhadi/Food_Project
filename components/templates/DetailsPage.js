@@ -61,7 +61,6 @@ const DetailsPage = ({food}) => {
           toast.success('successfully added to the cart')
 
          }else{
-          console.log(result);
           toast.error("failed to add product to the cart")
           
          }}
