@@ -42,9 +42,9 @@ const CategoryPage = ({data}) => {
     const difCheckHandler = (e)=>{
         const {name} = e.target
         setDifCheck({
-            Easy : name === "Easy" ,
-            Medium:name === "Medium" ,
-            Hard:name === "Hard" 
+            Easy : name == "Easy" ,
+            Medium:name == "Medium" ,
+            Hard:name == "Hard"  
         })
 
         setQuery({

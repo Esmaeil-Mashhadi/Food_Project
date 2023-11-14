@@ -46,9 +46,8 @@ const SignUp = () => {
           ,signBoolean, Message } = data
         
         const {validationResult} = validate(data)
-        const  errorMessages= validate(data).validationResult
 
-        console.log("hi");
+
     const changeHandler = (e)=>{
 
         if(e.target.name === "check"){
@@ -117,7 +116,7 @@ const SignUp = () => {
         signBoolean : !!Object.keys(validationResult).length})  
 
   
-   },[emailStatus , passwordStatus , confirmStatus , check , signBoolean  ])    
+   },[emailStatus , passwordStatus , confirmStatus , check , signBoolean ])    
  
    useEffect(()=>{
    
@@ -137,10 +136,10 @@ const SignUp = () => {
          <img className={styles.mobileImage} src='/images/mobile.png' />
 
             <Signup data= {data}  setData={setData} changeHandler = {changeHandler} focusHandler = {focusHandler}
-             errorMessages ={errorMessages} signUpHanlder = {signUpHanlder}/>
+             errorMessages ={validationResult} signUpHanlder = {signUpHanlder}/>
 
             <Login data= {data}  setData={setData} changeHandler = {changeHandler} focusHandler = {focusHandler}
-             errorMessages ={errorMessages} LoginHandler = {LoginHandler}/>
+             errorMessages ={validationResult} LoginHandler = {LoginHandler}/>
     
         </div>
 

@@ -99,7 +99,6 @@ const ProfilePage = ({email}) => {
             const totalString = localStorage.getItem('total')   
             const localTotal= JSON?.parse(totalString) || {}
             setLocalTotal(localTotal) 
-            // setCheckout(false) 
               
         } catch (error) { 
             console.log(error);

@@ -13,7 +13,7 @@ import Link from 'next/link';
 const Signup = ({data , setData , changeHandler , focusHandler , signUpHanlder , errorMessages}) => {
     const {email, password , confirmPassword , 
           check , validEmail , validPassword , 
-          validConfirm,touch , signBoolean , 
+          validConfirm, touch , signBoolean , 
           eyeClick , linkClick} = data
 
           const {emailMessage , passwordMessage , confirmMessage} = errorMessages

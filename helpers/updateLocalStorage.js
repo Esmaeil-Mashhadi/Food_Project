@@ -31,7 +31,6 @@ const reDefineTheLocalStorage =  (ordered)=>{
     let result = {} 
   
     if(ordered?.length){
-      console.log(ordered);
       ordered.reduce((acc,  curr)=>( 
              result.localTotalOrder = acc + curr.quantity  
       ), 0)  
@@ -49,8 +48,6 @@ const reDefineTheLocalStorage =  (ordered)=>{
      result.localTotalPrice = priceSum.toFixed(2)
     
 
-
-     
 
        localStorage.setItem('total', JSON.stringify(result))
        return true
