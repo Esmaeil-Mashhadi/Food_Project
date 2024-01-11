@@ -108,14 +108,17 @@ const SignUp = () => {
 
     
     useEffect(()=>{
-         
-       setData({...data , 
-        validEmail : emailStatus  === "valid",
-        validPassword:passwordStatus === "valid",  
-        validConfirm : confirmStatus ==="valid",
-        signBoolean : !!Object.keys(validationResult).length})  
+        setData((prev)=>{
+            return {
+                ...prev , 
+                validEmail : emailStatus  === "valid",
+                validPassword:passwordStatus === "valid",  
+                validConfirm : confirmStatus ==="valid",
+                signBoolean : !!Object.keys(validationResult).length
+            }
+        })
 
-  
+   
    },[emailStatus , passwordStatus , confirmStatus , check , signBoolean ])    
  
    useEffect(()=>{
