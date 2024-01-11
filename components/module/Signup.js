@@ -26,14 +26,14 @@ const Signup = ({data , setData , changeHandler , focusHandler , signUpHanlder ,
 
       <div className={styles.formField}>
          
-         <input autoComplete='email'  name='email'  id='email' value={email} onChange={changeHandler} onFocus={focusHandler} className={validEmail ? styles.emailChecked :null }  type='text'  required/>  
+         <input autoComplete='email'  name='email'  id='email' value={email} onInput={changeHandler}  onChange={changeHandler} onFocus={focusHandler} className={validEmail ? styles.emailChecked :null }  type='text'  required/>  
          <label htmlFor='email'>Email</label>  
          <div className={validEmail  ? styles.checkSvg  : touch.email ? styles.touched : styles.exSvg }> {validEmail  ? <BsFillPatchCheckFill/> : <BsFillPatchExclamationFill/>}  </div>
          <span className={styles.errorSpan}>{emailMessage && touch.email && `${emailMessage}`} </span>
      </div> 
 
      <div className={styles.formField}>
-         <input autoComplete='password' id='input' name='password'  value={password}  onChange={changeHandler} onFocus={focusHandler} className={validPassword ? styles.passChecked : null} type={eyeClick ? "text" : "password"}  required/>  
+         <input autoComplete='password' id='input' name='password'  value={password} onInput={changeHandler}  onChange={changeHandler} onFocus={focusHandler} className={validPassword ? styles.passChecked : null} type={eyeClick ? "text" : "password"}  required/>  
          <label htmlFor='input'>password</label>  
          <div className={validPassword ? styles.checkSvg  : touch.password ? styles.touched : styles.exSvg}> {validPassword ? <BsFillPatchCheckFill/> :<BsFillPatchExclamationFill/>}  </div>
          <div onClick={()=> setData({...data , eyeClick : !eyeClick})} className={touch.password ? styles.eye : styles.defaultEye}> {eyeClick ? <AiFillEye/> : <AiFillEyeInvisible/> }</div>
