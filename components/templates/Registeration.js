@@ -117,8 +117,6 @@ const SignUp = () => {
                 signBoolean : !!Object.keys(validationResult).length
             }
         })
-
-   
    },[emailStatus , passwordStatus , confirmStatus , check , signBoolean ])    
  
    useEffect(()=>{
