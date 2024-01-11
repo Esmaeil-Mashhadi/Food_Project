@@ -2,10 +2,10 @@ import MenuPage from '@/components/templates/MenuPage';
 import { FoodData } from '@/data/jsonFiles';
 
 
-const Menu = ({data}) => {
+const Menu = () => {
     return (
         <div>
-            <MenuPage data ={data}/>
+            <MenuPage data ={FoodData}/>
         </div>
     );
 };
@@ -13,11 +13,3 @@ const Menu = ({data}) => {
 export default Menu;
 
 //just show casing how would ssg and ssr works with serverless data
-export async function getStaticProps(){
-    const data = FoodData
-    
-return{
-    props:{data},
-    revalidate:10,
-}
-}
