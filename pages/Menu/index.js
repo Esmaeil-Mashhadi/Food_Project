@@ -12,4 +12,3 @@ const Menu = () => {
 
 export default Menu;
 
-//just show casing how would ssg and ssr works with serverless data

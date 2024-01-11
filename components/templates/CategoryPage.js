@@ -177,7 +177,7 @@ const CategoryPage = ({data}) => {
          {!searchToggle && <img className={styles.searchImage} src='./images/search.png' /> }
 
           {searchToggle &&    <div className={styles.resultContainer}>
-        {data.map(item=> <Card key={item.id} {...item} />)}
+        {data?.map(item=> <Card key={item.id} {...item} />)}
         </div>}
         
         </div>

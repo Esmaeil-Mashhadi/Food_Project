@@ -1,7 +1,12 @@
 import CategoryPage from "@/components/templates/CategoryPage";
 import { FoodData } from "@/data/jsonFiles";
+import { getFoodData } from "@/utils/dataHelper";
+import { useRouter } from "next/router";
 
-const Category = ({data}) => {
+const Category = () => {
+    const router = useRouter()
+   const {difficulty , time} = router.query
+    const data =  getFoodData(difficulty , time)
     return (
         <div>
             <CategoryPage data= {data} />
@@ -11,54 +16,3 @@ const Category = ({data}) => {
 
 export default Category;
 
-export async function getServerSideProps(context){
-
-    const {query : {difficulty , time}} = context
-     
-     const data = FoodData
-
-     const result = data.filter(item=> {
-
-        const Details = item.details
-
-        const diffResult = Details.filter(item => item.Difficulty === difficulty)
-  
-    
-        const timeResult = Details.filter(item => { 
-        
-            const cookingTime = item["Cooking Time"] || "" ; 
-                 
-    
-            const [timeDetail] = cookingTime.split(" "); 
-
-             
-    
-            if(time === "less"  && timeDetail && +timeDetail <= 30){
-                
-                return item
-               
-            } else if(time ==="more" && timeDetail && +timeDetail >30){
-              return item
-             
-            }
-                
-        })
-    
-         
-        if ( timeResult.length && diffResult.length && difficulty && time) {
-            return item;
-          } else if(!timeResult.length && difficulty&& diffResult.length && !time){
-          return item;
-        } else if (!difficulty && timeResult.length){
-            return item
-        }  
-            
-     })
-
-        
-     return{
-        props:{
-            data:result
-        }
-     }
-}
