@@ -1,5 +1,4 @@
 const { createSlice } = require("@reduxjs/toolkit");
-const { useReducer } = require("react");
 
 const initialState = {
     ordered :[],
@@ -37,7 +36,6 @@ const orderSlice = createSlice({
         );
 
 
-       
         if (sameIndex == -1) {
           const firstOrder =  [...state.ordered, action.payload]
           const {totalOrder , totalPrice} = sum(firstOrder)

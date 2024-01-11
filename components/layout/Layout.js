@@ -32,7 +32,6 @@ const Layout = ({children}) => {
             const {ordered} = finalData || {ordered :[]}
             setQuantity(ordered.length)
         }
-      
           gettingProduct() 
  
     },[refresh]) 

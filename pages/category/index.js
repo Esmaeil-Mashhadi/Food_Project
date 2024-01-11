@@ -1,4 +1,5 @@
 import CategoryPage from "@/components/templates/CategoryPage";
+import { FoodData } from "@/data/jsonFiles";
 
 const Category = ({data}) => {
     return (
@@ -13,11 +14,9 @@ export default Category;
 export async function getServerSideProps(context){
 
     const {query : {difficulty , time}} = context
-     const res = await fetch('http://localhost:4000/data')
-     const data = await res.json()
+     
+     const data = FoodData
 
-    
-      
      const result = data.filter(item=> {
 
         const Details = item.details

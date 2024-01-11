@@ -27,7 +27,7 @@ const ProfilePage = ({email}) => {
     const {show} = router.query
     const session = useSession()
 
-    let totalOrder , totalPrice , ordered 
+    let totalOrder , totalPrice  
    
 
     const [dbOrdered , setDbOrdered] = useState([])
@@ -42,7 +42,6 @@ const ProfilePage = ({email}) => {
 
     totalOrder =    localTotal?.localTotalOrder ||data.totalOrder
     totalPrice =    localTotal?.localTotalPrice || data.totalPrice
-    ordered = dbOrdered
     
     const checkoutHandler = ()=>{ 
         localStorage.setItem('inProgress' , JSON.stringify({progress : true}))
@@ -126,9 +125,9 @@ const ProfilePage = ({email}) => {
             </div>
             <div className={styles.orders}>
 
-            {ordered && show !== 'history' &&
+            {dbOrdered && show !== 'history' &&
                  <div className={styles.ordered}>
-                     {ordered.map((item , index)=>{
+                     {dbOrdered.map((item , index)=>{
                         return  <Order key={index} checkout={checkout} refresh ={refresh}  setRefresh = {setRefresh} setCheckout={setCheckout} product={item}/>
                      })}</div>}
 
@@ -144,7 +143,7 @@ const ProfilePage = ({email}) => {
               {checkout && <p className={styles.warning}> <span><AiFillWarning/>Warning! <AiFillWarning/> </span> Leaving this page or going offline will temporarily suspend your order.</p>}
          
         
-            {ordered && ordered.length && show !== 'history'?
+            {dbOrdered && dbOrdered.length && show !== 'history'?
                 <div className={styles.checkoutContainer}>
                    <div>total order :<p>{totalOrder}</p> </div>
                    <div>total Price : <p>{totalPrice} $</p></div>

@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { add } from '@/redux/orderReducer'
 import toast, { Toaster } from 'react-hot-toast'
 import { appContext } from '../layout/Layout'
-import { Hourglass} from 'react-loader-spinner'
+import { Bars, Hourglass, LineWave, ProgressBar, RotatingLines} from 'react-loader-spinner'
 import {updateTotal} from '@/helpers/updateLocalStorage'
 
 
@@ -20,67 +20,56 @@ const DetailsPage = ({food}) => {
     const finalPrice = (price)*(100-discount)/100
     
     const [showPop , setShowPop] = useState(false)
-    const [sendData, setSendData] = useState(false)
     let [quantity , setQuantity] = useState(1)
+    const [checkout , setCheckout] = useState(false)
+    const [loading  , setLoading] = useState(false)
     const orderDate = new Date().toLocaleString()
     const {status} = useSession()
-    
- 
- const [checkout , setCheckout] = useState(false)
-
-   const {totalOrder , totalPrice } = useSelector(item => item.order)
-  const {refresh , setRefresh  } = useContext(appContext)
+    const {totalOrder , totalPrice } = useSelector(item => item.order)
+    const {refresh , setRefresh  } = useContext(appContext)
   
-   const dispatch  = useDispatch() 
+    const dispatch  = useDispatch() 
+    const session = useSession()
    
-   const confirmHandler = async()=>{
-     setSendData(true)
-       dispatch(add({...food , quantity})) 
-       setShowPop(false)
-     
-    }
-
-
-   
-
-  
-    useEffect(()=>{
-
-      const progressString = localStorage.getItem('inProgress')
-      const{progress} = JSON.parse(progressString) || false
-       setCheckout(progress)
-      async function fetching(){
+    const confirmHandler = async()=>{
+       dispatch(add({...food , quantity}))
+       setLoading(true)
         const res = await fetch("/api/product" , {
           method:"POST" , body : JSON.stringify({food , quantity , orderDate}) , headers :{"Content-Type" :"Application/json"}
          })
          const result = await res.json()
-
          if(result.status == "success"){ 
           const updated = updateTotal(food, totalOrder , totalPrice , quantity)
           if(updated) setRefresh(!refresh)
           toast.success('successfully added to the cart')
+          setLoading(false)
 
          }else{
           toast.error("failed to add product to the cart")
           
-         }}
-         if(sendData){
-           fetching()
          }
+       setShowPop(false)
+    }
 
-    },[sendData ,totalOrder]) 
+    useEffect(()=>{
+      const progressString = localStorage.getItem('inProgress')
+      const{progress} = JSON.parse(progressString) || false
+       setCheckout(progress)
+  
+    },[totalOrder]) 
 
+    console.log(loading);
     return (
-        <div className={showPop ? styles.overlay : styles.container}>
-          
+        <div className={styles.container}>
+        {showPop && <div className={styles.overLay}></div>}
+        
             <div className={styles.top}>
-
               <div className={styles.imageContaienr}>
               <img src={`/images/${id}.jpeg`} />  
               {discount ? <span className={styles.off}> %{discount} OFF </span> :""}
               {status === "authenticated"  ? !checkout && <button onClick={()=> setShowPop(true)}> <MdOutlineMenuBook/> order food</button> : <div className={styles.sign2see}>sign up for ordering food<AiFillWarning/></div>} 
-              {checkout  && (<div className={styles.preventOrder}> 
-                <Hourglass width="20px"  colors={['rgb(231, 94, 94)']} /> cant order food during preperation ! <Hourglass colors={['rgb(231, 94, 94)']} width='20px'/></div>)}
+              {checkout && session.status == "authenticated"  && (<div className={styles.preventOrder}> 
+                <Hourglass width="20px"  colors={['rgb(231, 94, 94)']}/> cant order food during preperation ! <Hourglass colors={['rgb(231, 94, 94)']} width='20px'/></div>)}
 
               </div>
        
@@ -146,16 +135,14 @@ const DetailsPage = ({food}) => {
                 </div>
 
                 <div className={styles.confirmContainer}>
-                <button onClick={confirmHandler}>Confirm</button>
+                <button disabled ={loading} onClick={confirmHandler}>{loading ? <RotatingLines width = {20} height={10}/> : <p> Confirm</p>}</button>
                 <button onClick={()=> {setShowPop(false)}}>cancel</button> 
                 </div>
                 
-              </div>}
+            </div>}
 
 
            <Toaster />
-         
-
         </div>
     );
 };

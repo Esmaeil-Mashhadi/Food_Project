@@ -1,5 +1,5 @@
-{
-    "data": [
+
+export const FoodData= [
       {
         "id": 1,
         "name": "Beef Wellington",
@@ -542,5 +542,5 @@
         ]
       }
     ]
-  }
+  
   

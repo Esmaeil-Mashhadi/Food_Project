@@ -1,4 +1,5 @@
 import MenuPage from '@/components/templates/MenuPage';
+import { FoodData } from '@/data/jsonFiles';
 
 
 const Menu = ({data}) => {
@@ -11,9 +12,9 @@ const Menu = ({data}) => {
 
 export default Menu;
 
+//just show casing how would ssg and ssr works with serverless data
 export async function getStaticProps(){
-    const res = await fetch("http://localhost:4000/data")
-    const data = await res.json();
+    const data = FoodData
     
 return{
     props:{data},
