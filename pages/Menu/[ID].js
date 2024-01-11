@@ -1,42 +1,18 @@
 import DetailsPage from "@/components/templates/DetailsPage";
 import { FoodData } from "@/data/jsonFiles";
+import { useRouter } from "next/router";
 
-const Detail = ({data}) => {
+const Detail = () => {
+    const router = useRouter()
+    const data = FoodData.find(item => item.id == router.query.ID)
+    
     return (
         <div>
-            <DetailsPage food = {data}/>
+        {data && <DetailsPage food = {data}/>}
         </div>
     );
 };
 
 export default Detail;
-
-export async function getStaticPaths(){
-    const data = FoodData.slice(0, 10);
-
-    const paths = data?.map(item=>  ({
-        params :{ID : item?.id.toString()}
-    }))
-
-
-    return{
-        paths,
-        fallback: false
-    }
-   
-}
-
-
-
-export async function getStaticProps(context){
-
-     const {params} = context
-     const data = FoodData.find(item => item.id == params.ID)
-     return{
-        props:{
-           data     
-        }
-     }
-}
 
 
