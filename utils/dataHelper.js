@@ -27,8 +27,7 @@ import { FoodData } from "@/data/jsonFiles"
             }
                 
         })
-    
-         
+
         if ( timeResult.length && diffResult.length && difficulty && time) {
             return item;
           } else if(!timeResult.length && difficulty&& diffResult.length && !time){

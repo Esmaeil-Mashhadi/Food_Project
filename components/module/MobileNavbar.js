@@ -25,8 +25,10 @@ const MobileNavbar = ({quantity}) => {
            <div className={touched ? styles.show : styles.hide} >
                     <Link onClick={()=> settouched(false)} href="/">Home</Link>
                     <Link onClick={()=> settouched(false)} href="/category">Category</Link>
-                {status == 'unauthenticated' && <Link onClick={()=> settouched(false)} href="/Register">Sign Up</Link>}
-                    <Link onClick={()=> settouched(false)} href="/Profile">Profile</Link>
+                {status == 'unauthenticated' ? <Link onClick={()=> settouched(false)} href="/Register">Sign Up</Link>
+            
+            : <Link onClick={()=> settouched(false)} href="/Profile">Profile</Link>}
+                   
 
             {quantity  ? <div className={styles.hamQuantity}>{quantity}</div> : null}
             
