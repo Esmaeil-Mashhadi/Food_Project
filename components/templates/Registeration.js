@@ -57,7 +57,6 @@ const SignUp = () => {
     }
 
     const signUpHanlder = async(event)=>{
-        console.log('hi');
         event.preventDefault() 
         const res = await fetch("/api/register", {
             method :"POST" , body : JSON.stringify({email , password}) , headers :{'Content-Type': 'application/json'  }
@@ -65,7 +64,10 @@ const SignUp = () => {
 
         const result = await res.json()
         if(result.status == 200){
-            toast.success('welcome')
+            toast.success('welcome , Login to confirm')
+            setTimeout(() => {
+                setData({...data , linkClick : true})
+            }, 2000);
         }else{
             toast.error(result.message)
         }
