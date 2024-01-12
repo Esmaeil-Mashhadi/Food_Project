@@ -57,6 +57,7 @@ const SignUp = () => {
     }
 
     const signUpHanlder = async(event)=>{
+        console.log('hi');
         event.preventDefault() 
         const res = await fetch("/api/register", {
             method :"POST" , body : JSON.stringify({email , password}) , headers :{'Content-Type': 'application/json'  }
@@ -66,7 +67,7 @@ const SignUp = () => {
         if(result.status == 200){
             toast.success('welcome')
         }else{
-            toast.error("something went wrong")
+            toast.error(result.message)
         }
 
     }
@@ -79,7 +80,7 @@ const SignUp = () => {
         if(res.status == 200){
             toast.success("welcome back") 
         }else {
-           toast.error("something went wrong")
+           toast.error(res.error)
         }
     }
 

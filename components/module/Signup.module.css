@@ -167,8 +167,9 @@
 
 
 .fadeButton{
-    cursor: none !important;
      pointer-events: none;
+     opacity: .5;
+     user-select: none;
 }
 
 .signUp button:active{

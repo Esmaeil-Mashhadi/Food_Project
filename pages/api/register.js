@@ -17,8 +17,9 @@ import foodUser from "@/models/userModel"
     }
     
     const user = await foodUser.findOne({email})
+   
     if(user){
-      return res.send({status:400 , message :"User already exist"})
+      return res.json({status:400 , message :"User already exist"})
     }
 
     const hashedPassword =  await hashing(password)

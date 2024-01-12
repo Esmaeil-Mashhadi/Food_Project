@@ -10,11 +10,12 @@ import Link from 'next/link';
 
 
 
+
 const Signup = ({data , setData , changeHandler , focusHandler , signUpHanlder , errorMessages  }) => {
     
     const {email, password , confirmPassword ,  check , touch , eyeClick , linkClick} = data
     const {emailMessage , passwordMessage , confirmMessage} = errorMessages
-    
+
     return (
         
         <div className={linkClick ? styles.transformContainer : styles.formSubContainer}>
@@ -53,9 +54,8 @@ const Signup = ({data , setData , changeHandler , focusHandler , signUpHanlder ,
 
      <div className={styles.signUp}>
          <Link onClick={()=>setData({...data , linkClick : !linkClick})} href="">Already Have an Account?</Link>
-         <button  className={!Object.keys(errorMessages).length  || !check ? styles.fadeButton :""}  disabled ={Object.keys(errorMessages).length} onClick={signUpHanlder}>Sign Up</button>
-        
-     </div>
+         <button className={Object.keys(errorMessages).length ? styles.fadeButton :""}  onClick={signUpHanlder}>signIn</button>        
+     </div> 
     </div> 
     );
 };
