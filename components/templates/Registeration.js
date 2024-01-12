@@ -22,9 +22,6 @@ const SignUp = () => {
         loginPassword:"",
         confirmPassword:"",
         check :false,
-        validEmail : false,
-        validPassword: false,
-        validConfirm : false,
         touch : {
             email : false,
             password:false,

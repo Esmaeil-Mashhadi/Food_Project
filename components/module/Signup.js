@@ -25,25 +25,25 @@ const Signup = ({data , setData , changeHandler , focusHandler , signUpHanlder ,
         <h2>Sign up Form</h2>
 
       <div className={styles.formField}>
-         <input autoComplete='email'  name='email'  id='email' value={email} onChange={changeHandler} onFocus={focusHandler} className={validEmail ? styles.emailChecked :null }  type='text'  required/>  
+         <input autoComplete='email'  name='email'  id='email' value={email} onChange={changeHandler} onFocus={focusHandler} className={!emailMessage ? styles.emailChecked :null }  type='text'  required/>  
          <label htmlFor='email'>Email</label>  
-         <div className={!emailMessage  ? styles.checkSvg  : touch.email ? styles.touched : styles.exSvg }> {validEmail  ? <BsFillPatchCheckFill/> : <BsFillPatchExclamationFill/>}  </div>
+         <div className={!emailMessage  ? styles.checkSvg  : touch.email ? styles.touched : styles.exSvg }> {!emailMessage  ? <BsFillPatchCheckFill/> : <BsFillPatchExclamationFill/>}  </div>
          <span className={styles.errorSpan}>{emailMessage && touch.email && `${emailMessage}`} </span>
      </div> 
 
      <div className={styles.formField}>
-         <input id='input' name='password'  value={password} onChange={changeHandler} onFocus={focusHandler} className={validPassword ? styles.passChecked : null} type={eyeClick ? "text" : "password"}  required/>  
+         <input id='input' name='password'  value={password} onChange={changeHandler} onFocus={focusHandler} className={!passwordMessage ? styles.passChecked : null} type={eyeClick ? "text" : "password"}  required/>  
          <label htmlFor='input'>password</label>  
-         <div className={validPassword ? styles.checkSvg  : touch.password ? styles.touched : styles.exSvg}> {validPassword ? <BsFillPatchCheckFill/> :<BsFillPatchExclamationFill/>}  </div>
+         <div className={!passwordMessage ? styles.checkSvg  : touch.password ? styles.touched : styles.exSvg}> {!passwordMessage ? <BsFillPatchCheckFill/> :<BsFillPatchExclamationFill/>}  </div>
          <div onClick={()=> setData({...data , eyeClick : !eyeClick})} className={touch.password ? styles.eye : styles.defaultEye}> {eyeClick ? <AiFillEye/> : <AiFillEyeInvisible/> }</div>
          <span className={styles.errorSpan}>{passwordMessage && touch.password && `${passwordMessage}`} </span>
 
      </div> 
 
      <div className={styles.formField}>
-         <input id='confirm' type='password' name='confirmPassword' value={confirmPassword} onChange={changeHandler} onFocus={focusHandler} className={validConfirm  ? styles.confirmed : null} required/>  
+         <input id='confirm' type='password' name='confirmPassword' value={confirmPassword} onChange={changeHandler} onFocus={focusHandler} className={!confirmMessage  ? styles.confirmed : null} required/>  
          <label htmlFor='confirm'>Confirm  password</label>
-         <div className={validConfirm ? styles.checkSvg  : touch.confirmPassword ? styles.touched : styles.exSvg}> {validConfirm ? <BsFillPatchCheckFill/> :<BsFillPatchExclamationFill/>}  </div>
+         <div className={!confirmMessage ? styles.checkSvg  : touch.confirmPassword ? styles.touched : styles.exSvg}> {!confirmMessage ? <BsFillPatchCheckFill/> :<BsFillPatchExclamationFill/>}  </div>
          <span className={styles.errorSpan}>{confirmMessage && touch.confirmPassword && `${confirmMessage}`} </span>
 
 
