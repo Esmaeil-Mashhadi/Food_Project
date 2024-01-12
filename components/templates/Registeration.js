@@ -1,6 +1,5 @@
 import styles from './register.module.css'
 import { useEffect, useState } from 'react';
-import Nofication from '@/helpers/Nofication';
 
 //helpers
 
@@ -11,6 +10,7 @@ import {signIn} from 'next-auth/react'
 import { useRouter } from 'next/navigation';
 import Signup from '../module/Signup';
 import Login from '../module/Login';
+import toast from 'react-hot-toast';
 
 const SignUp = () => {
 
@@ -27,22 +27,14 @@ const SignUp = () => {
             password:false,
             confirmPassword:false,
         },
-        signBoolean : true,
-        Message:{
-            notMessage :'',
-            notStatus: ''
-        },
         eyeClick : false,
         linkClick : false
     })
 
-    const [showNot , setShowNot] = useState(false)
 
-    const {email, password,check ,emailStatus,
-          passwordStatus,confirmStatus,touch
-          ,signBoolean, Message } = data
-        
-        const {validationResult} = validate(data)
+
+    const {email, password,touch} = data
+     const {validationResult} = validate(data)
 
 
     const changeHandler = (e)=>{
@@ -60,10 +52,8 @@ const SignUp = () => {
 
     }
 
-    const focusHandler = (e)=>{
-       
+    const focusHandler = (e)=>{  
       setData({...data , touch :{...touch ,[e.target.name] : true}})
-       
     }
 
     const signUpHanlder = async(event)=>{
@@ -73,56 +63,31 @@ const SignUp = () => {
         })
 
         const result = await res.json()
-        setData({...data , Message :{notMessage : result.message , notStatus : result.status}})
+        if(result.status == 200){
+            toast.success('welcome')
+        }else{
+            toast.error("something went wrong")
+        }
 
-        setTimeout(() => {
-            setData({...data , Message :{notMessage : false}})
-            if(result.status === "successful"){
-                 setData({...data , linkClick : true})
-            }  
-        }, 2000);
     }
   
     const LoginHandler = async ()=>{
         setShowNot(true)
-   
         const res = await signIn('credentials' , {
             email , password , redirect :false
         })
 
-        
         if(res.status == 200){
-            setData({...data , Message:{notMessage : "welcome 🤗" , notStatus:"successful"}})
+            toast.success("welcome back") 
             setTimeout(() => {
                 router.push("/")
             }, 3000);
         }else {
-            setData({...data ,Message : {notMessage :res.error , notStatus:"failed"}})
+           toast.error("something went wrong")
         }
-
-  
     }
 
     
-    useEffect(()=>{
-        setData((prev)=>{
-            return {
-                ...prev , 
-                validEmail : emailStatus  === "valid",
-                validPassword:passwordStatus === "valid",  
-                validConfirm : confirmStatus ==="valid",
-                signBoolean : !!Object.keys(validationResult).length
-            }
-        })
-   },[emailStatus , passwordStatus , confirmStatus , check , signBoolean ])    
- 
-   useEffect(()=>{
-   
-        setTimeout(() => {
-            setShowNot(false)
-        }, 5000);
-    
-   },[showNot])
 
     return (
 
@@ -141,11 +106,6 @@ const SignUp = () => {
     
         </div>
 
-        {Message.notMessage &&  showNot && 
-          <div className={styles.notContainer}>
-        <Nofication message ={Message}/>
-         </div>
-        }
        
        </div>
     );

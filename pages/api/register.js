@@ -27,7 +27,7 @@ import foodUser from "@/models/userModel"
       password : hashedPassword,
     })
 
-    return res.send({status:"successful" , message:"Welcome ! ,  Please login to confirm"})
+    return res.send({status:"200" , message:"Welcome ! ,  Please login to confirm"})
 
 
 
