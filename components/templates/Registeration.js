@@ -10,7 +10,7 @@ import {signIn} from 'next-auth/react'
 import { useRouter } from 'next/navigation';
 import Signup from '../module/Signup';
 import Login from '../module/Login';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 const SignUp = () => {
 
@@ -72,16 +72,12 @@ const SignUp = () => {
     }
   
     const LoginHandler = async ()=>{
-        setShowNot(true)
         const res = await signIn('credentials' , {
             email , password , redirect :false
         })
 
         if(res.status == 200){
             toast.success("welcome back") 
-            setTimeout(() => {
-                router.push("/")
-            }, 3000);
         }else {
            toast.error("something went wrong")
         }
@@ -106,7 +102,7 @@ const SignUp = () => {
     
         </div>
 
-       
+       <Toaster />
        </div>
     );
 };
